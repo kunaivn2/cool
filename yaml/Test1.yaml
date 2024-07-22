@@ -3,16 +3,25 @@ mitm:
   ca_p12: egern.p12
   ca_passphrase: egern
   hostnames:
-  - '*.googlevideo.com'
-  - youtubei.googleapis.com
-  - mobile-api.adguard.org
   - api.revenuecat.com
-  - subscription.grammarly.com
-  - premium*.truecaller.com
+  - buy.itunes.apple.com
   - api.picsart.com
-  - photos.adobe.io
-  - api.calm.io
-  - lcs-mobile-cops.adobe.io
+  - api-account.kinemasters.com
+  - us-central1-alight-creative.cloudfunctions.net
+  - api.adapty.io
+  - carrotweather.herokuapp.com
+  - order.creativeappnow.com
+  - api.mwm-users.com
+  - us-central1-muslim-pro-app.cloudfunctions.net
+  - prod.studysmarter.de
+  - api.qonversion.io
+  - subscription.grammarly.com
+  - api.esound.app
+  - api.purchasely.io
+  - api.sandbox.love
+  - subscriptions.songshift.com
+  - api.adblockpro.app
+  - mobile-api.adguard.org
 
 header_rewrites:
 - delete:
@@ -24,71 +33,30 @@ header_rewrites:
     name: x-revenuecat-etag
     type: request
 
-map_locals:
-- match: ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad
-  to: https://raw.githubusercontent.com/kunaivn2/cool/main/etc/blank.txt
 
 scriptings:
-- http_request:
-    name: youtube.request
-    match: ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence)
-    script_url: https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.request.preview.js
-    body_required: true
-    binary_body: true
 - http_response:
-    name: youtube.response
-    match: ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting)
-    script_url: https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.response.preview.js
-    body_required: true
-    binary_body: true
-- http_response:
-    name: TrueCaller
-    match: ^https://premium-(.+)\.truecaller\.com/v\d/(subscriptions|products\/apple)?
-    script_url: https://raw.githubusercontent.com/kunaivn2/cool/main/js/TrueCaller.js
-    body_required: true
-- http_response:
-    name: Grammarly
-    match: ^https?:\/\/subscription\.grammarly\.com\/api\/v1\/subscription$
-    script_url: https://raw.githubusercontent.com/kunaivn2/cool/main/js/Grammarly.js
-    body_required: true
-    update_interval: 5
-- http_response:
-    name: Locket
+    name: AppRCTesters
     match: ^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$)
-    script_url: https://raw.githubusercontent.com/kunaivn2/cool/main/js/Locket.js
-    body_required: true
-    update_interval: 5
-- http_request:
-    name: PicsArt
-    match: https://api.picsart.com/gw-v2/shop/subscription/apple/purchases
-    script_url: https://raw.githubusercontent.com/kunaivn2/cool/main/js/PicsArt.js
+    script_url: https://apptesters.org/wp-content/uploads/AutoRC.js
     body_required: true
     update_interval: 5
 - http_response:
-    name: AdGuard
-    match: ^https:\/\/mobile-api\.adguard\.org\/api\/.+\/ios_validate_receipt\/(.*?)
-    script_url: https://raw.githubusercontent.com/kunaivn2/cool/main/js/AdGuard.js
+    name: AppAdTesters
+    match: https://api.adapty.io/api/v1/sdk/analytics/profiles
+    script_url: https://apptesters.org/wp-content/uploads/Adapty.js
     body_required: true
     update_interval: 5
 - http_response:
-    name: Lightroom
-    match: ^https:\/\/photos\.adobe\.io\/v2\/accounts*
-    script_url: https://raw.githubusercontent.com/leompsy/nzw9314/master/langkhach/Lightroom.js
+    name: AppitTesters
+    match: ^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt
+    script_url: https://apptesters.org/wp-content/uploads/iTunes.js
     body_required: true
     update_interval: 5
 - http_response:
-    name: Calm
-    match: ^https:\/\/api\.calm\.com\/me$
-    script_url: https://raw.githubusercontent.com/Hedilict/QuantumultX/master/langkhach/calm.vip.js
-    body_required: true
-    update_interval: 5
-- http_response:
-    name: Photoshop
-    match: ^https:\/\/lcs-mobile-cops\.adobe\.io\/mobile_profile
-    script_url: https://raw.githubusercontent.com/Hedilict/QuantumultX/master/langkhach/photoshop.js
+    name: AppPurTesters
+    match: https://api.purchasely.io/paab/user_purchases
+    script_url: https://apptesters.org/wp-content/uploads/purchasely.js
     body_required: true
     update_interval: 5
 
-    
-    
-    
