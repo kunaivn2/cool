@@ -3,12 +3,12 @@ mitm:
   ca_p12: egern.p12
   ca_passphrase: egern
   hostnames:
-  - api.purchasely.io
+  - api.qonversion.io
 
 scriptings:
 - http_response:
-    name: AppPurTesters
-    match: https://api.purchasely.io/paab/user_purchases
-    script_url: https://apptesters.org/wp-content/uploads/purchasely.js
+    name: AppQOTesters
+    match: api.qonversion.io/v1/user/init
+    script_url: https://apptesters.org/wp-content/uploads/qonversion.js
     body_required: true
     update_interval: 5
