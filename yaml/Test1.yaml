@@ -3,47 +3,12 @@ mitm:
   ca_p12: egern.p12
   ca_passphrase: egern
   hostnames:
-  - api.revenuecat.com
   - buy.itunes.apple.com
-  - api.picsart.com
-  - api-account.kinemasters.com
-  - us-central1-alight-creative.cloudfunctions.net
-  - api.adapty.io
-  - carrotweather.herokuapp.com
-  - order.creativeappnow.com
-  - api.mwm-users.com
-  - us-central1-muslim-pro-app.cloudfunctions.net
-  - prod.studysmarter.de
-  - api.qonversion.io
-  - subscription.grammarly.com
-  - api.esound.app
-  - api.purchasely.io
-  - api.sandbox.love
-  - subscriptions.songshift.com
-  - api.adblockpro.app
-  - mobile-api.adguard.org
-
-header_rewrites:
-- delete:
-    match: ^https?://api.revenuecat.com/.+/(receipts$|subscribers/?(.*?)*$)
-    name: X-RevenueCat-ETag
-    type: request
-- delete:
-    match: ^https?://api.revenuecat.com/.+/(receipts$|subscribers/?(.*?)*$)
-    name: x-revenuecat-etag
-    type: request
-
 
 scriptings:
-- http_response:
-    name: AppRCTesters
-    match: ^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$)
-    script_url: https://apptesters.org/wp-content/uploads/AutoRC.js
-    body_required: true
-    update_interval: 5
-- http_response:
-    name: AppAdTesters
-    match: https://api.adapty.io/api/v1/sdk/analytics/profiles
-    script_url: https://apptesters.org/wp-content/uploads/Adapty.js
+    - http_response:
+    name: AppitTesters
+    match: ^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt
+    script_url: https://apptesters.org/wp-content/uploads/iTunes.js
     body_required: true
     update_interval: 5
