@@ -13,6 +13,7 @@ mitm:
   - photos.adobe.io
   - us-central1-alight-creative.cloudfunctions.net
   - api-account.kinemasters.com
+  - buy.itunes.apple.com
 
 header_rewrites:
 - delete:
@@ -86,5 +87,11 @@ scriptings:
     name: AlightMotion
     match: https://us-central1-alight-creative.cloudfunctions.net/getAccountStatusAndLicenses
     script_url: https://raw.githubusercontent.com/kunaivn2/cool/main/js/AlightMotion.js
+    body_required: true
+    update_interval: 5
+- http_response:
+    name: AppitTesters
+    match: ^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt
+    script_url: https://raw.githubusercontent.com/kunaivn2/cool/main/js/iTunes.js
     body_required: true
     update_interval: 5
