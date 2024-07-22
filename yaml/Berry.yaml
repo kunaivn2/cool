@@ -11,6 +11,8 @@ mitm:
   - premium*.truecaller.com
   - api.picsart.com
   - photos.adobe.io
+  - us-central1-alight-creative.cloudfunctions.net
+  - api-account.kinemasters.com
 
 header_rewrites:
 - delete:
@@ -72,5 +74,17 @@ scriptings:
     name: Lightroom
     match: ^https:\/\/photos\.adobe\.io\/v2\/accounts*
     script_url: https://raw.githubusercontent.com/leompsy/nzw9314/master/langkhach/Lightroom.js
+    body_required: true
+    update_interval: 5
+- http_response:
+    name: Kinemaster
+    match: https://api-account.kinemasters.com/v2/user/subscribe
+    script_url: https://apptesters.org/wp-content/uploads/KineMaster.js
+    body_required: true
+    update_interval: 5
+- http_response:
+    name: Alight Motion
+    match: https://us-central1-alight-creative.cloudfunctions.net/getAccountStatusAndLicenses
+    script_url: https://apptesters.org/wp-content/uploads/AlightMotion.js
     body_required: true
     update_interval: 5
