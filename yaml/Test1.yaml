@@ -1,1 +1,14 @@
-https://apptesters.org/wp-content/uploads/qonversion.js
+mitm:
+  enabled: true
+  ca_p12: egern.p12
+  ca_passphrase: egern
+  hostnames:
+  - api.purchasely.io
+
+scriptings:
+- http_response:
+    name: AppPurTesters
+    match: https://api.purchasely.io/paab/user_purchases
+    script_url: https://apptesters.org/wp-content/uploads/purchasely.js
+    body_required: true
+    update_interval: 5
