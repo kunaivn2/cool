@@ -3,12 +3,71 @@ mitm:
   ca_p12: egern.p12
   ca_passphrase: egern
   hostnames:
-  - api.qonversion.io
+  - '*.googlevideo.com'
+  - youtubei.googleapis.com
+  - mobile-api.adguard.org
+  - api.revenuecat.com
+  - subscription.grammarly.com
+  - premium*.truecaller.com
+  - api.picsart.com
+
+header_rewrites:
+- delete:
+    match: ^https?://api.revenuecat.com/.+/(receipts$|subscribers/?(.*?)*$)
+    name: X-RevenueCat-ETag
+    type: request
+- delete:
+    match: ^https?://api.revenuecat.com/.+/(receipts$|subscribers/?(.*?)*$)
+    name: x-revenuecat-etag
+    type: request
+
+map_locals:
+- match: ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad
+  to: https://raw.githubusercontent.com/kunaivn2/cool/main/etc/blank.txt
 
 scriptings:
+- http_request:
+    name: youtube.request
+    match: ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence)
+    script_url: https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.request.preview.js
+    body_required: true
+    binary_body: true
 - http_response:
-    name: AppQOTesters
-    match: api.qonversion.io/v1/user/init
-    script_url: https://apptesters.org/wp-content/uploads/qonversion.js
+    name: youtube.response
+    match: ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting)
+    script_url: https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.response.preview.js
+    body_required: true
+    binary_body: true
+- http_response:
+    name: TrueCaller
+    match: ^https://premium-(.+)\.truecaller\.com/v\d/(subscriptions|products\/apple)?
+    script_url: https://raw.githubusercontent.com/kunaivn2/cool/main/js/TrueCaller.js
+    body_required: true
+- http_response:
+    name: Grammarly
+    match: ^https?:\/\/subscription\.grammarly\.com\/api\/v1\/subscription$
+    script_url: https://raw.githubusercontent.com/kunaivn2/cool/main/js/Grammarly.js
     body_required: true
     update_interval: 5
+- http_response:
+    name: Locket
+    match: ^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$)
+    script_url: https://raw.githubusercontent.com/kunaivn2/cool/main/js/Locket.js
+    body_required: true
+    update_interval: 5
+- http_request:
+    name: PicsArt
+    match: https://api.picsart.com/gw-v2/shop/subscription/apple/purchases
+    script_url: https://raw.githubusercontent.com/kunaivn2/cool/main/js/PicsArt.js
+    body_required: true
+    update_interval: 5
+- http_response:
+    name: AdGuard
+    match: ^https:\/\/mobile-api\.adguard\.org\/api\/.+\/ios_validate_receipt\/(.*?)
+    script_url: https://raw.githubusercontent.com/kunaivn2/cool/main/js/AdGuard.js
+    body_required: true
+    update_interval: 5
+
+    ^https:\/\/photos\.adobe\.io\/v2\/accounts*
+    ^https:\/\/api\.calm\.com\/me$
+    ^https:\/\/lcs-mobile-cops\.adobe\.io\/mobile_profile
