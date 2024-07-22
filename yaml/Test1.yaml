@@ -47,9 +47,3 @@ scriptings:
     script_url: https://apptesters.org/wp-content/uploads/Adapty.js
     body_required: true
     update_interval: 5
-- http_response:
-    name: AppitTesters
-    match: ^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt
-    script_url: https://apptesters.org/wp-content/uploads/iTunes.js
-    body_required: true
-    update_interval: 5
