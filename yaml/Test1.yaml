@@ -67,7 +67,25 @@ scriptings:
     script_url: https://raw.githubusercontent.com/kunaivn2/cool/main/js/AdGuard.js
     body_required: true
     update_interval: 5
+- http_response:
+    name: Lightroom
+    match: ^https:\/\/photos\.adobe\.io\/v2\/accounts*
+    script_url: https://raw.githubusercontent.com/leompsy/nzw9314/master/langkhach/Lightroom.js
+    body_required: true
+    update_interval: 5
+- http_response:
+    name: Calm
+    match: ^https:\/\/api\.calm\.com\/me$
+    script_url: https://raw.githubusercontent.com/Hedilict/QuantumultX/master/langkhach/calm.vip.js
+    body_required: true
+    update_interval: 5
+- http_response:
+    name: Photoshop
+    match: ^https:\/\/lcs-mobile-cops\.adobe\.io\/mobile_profile
+    script_url: https://raw.githubusercontent.com/Hedilict/QuantumultX/master/langkhach/photoshop.js
+    body_required: true
+    update_interval: 5
 
-    ^https:\/\/photos\.adobe\.io\/v2\/accounts*
-    ^https:\/\/api\.calm\.com\/me$
-    ^https:\/\/lcs-mobile-cops\.adobe\.io\/mobile_profile
+    
+    
+    
