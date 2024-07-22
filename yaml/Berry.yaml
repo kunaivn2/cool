@@ -73,7 +73,7 @@ scriptings:
 - http_response:
     name: Lightroom
     match: ^https:\/\/photos\.adobe\.io\/v2\/accounts*
-    script_url: https://raw.githubusercontent.com/leompsy/nzw9314/master/langkhach/Lightroom.js
+    script_url: https://raw.githubusercontent.com/kunaivn2/cool/main/js/Lightroom.js
     body_required: true
     update_interval: 5
 - http_response:
