@@ -10,6 +10,9 @@ mitm:
   - subscription.grammarly.com
   - premium*.truecaller.com
   - api.picsart.com
+  - photos.adobe.io
+  - api.calm.io
+  - lcs-mobile-cops.adobe.io
 
 header_rewrites:
 - delete:
