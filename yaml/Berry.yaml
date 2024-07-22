@@ -10,6 +10,7 @@ mitm:
   - subscription.grammarly.com
   - premium*.truecaller.com
   - api.picsart.com
+  - photos.adobe.io
 
 header_rewrites:
 - delete:
@@ -65,5 +66,11 @@ scriptings:
     name: AdGuard
     match: ^https:\/\/mobile-api\.adguard\.org\/api\/.+\/ios_validate_receipt\/(.*?)
     script_url: https://raw.githubusercontent.com/kunaivn2/cool/main/js/AdGuard.js
+    body_required: true
+    update_interval: 5
+- http_response:
+    name: Lightroom
+    match: ^https:\/\/photos\.adobe\.io\/v2\/accounts*
+    script_url: https://raw.githubusercontent.com/leompsy/nzw9314/master/langkhach/Lightroom.js
     body_required: true
     update_interval: 5
