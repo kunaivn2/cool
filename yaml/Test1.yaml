@@ -4,6 +4,17 @@ mitm:
   ca_passphrase: egern
   hostnames:
   - buy.itunes.apple.com
+  - api.revenuecat.com
+
+  header_rewrites:
+- delete:
+    match: ^https?://api.revenuecat.com/.+/(receipts$|subscribers/?(.*?)*$)
+    name: X-RevenueCat-ETag
+    type: request
+- delete:
+    match: ^https?://api.revenuecat.com/.+/(receipts$|subscribers/?(.*?)*$)
+    name: x-revenuecat-etag
+    type: request
 
 scriptings:
     - http_response:
