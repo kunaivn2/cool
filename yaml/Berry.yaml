@@ -32,13 +32,13 @@ scriptings:
 - http_request:
     name: youtube.request
     match: ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence)
-    script_url: https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.request.preview.js
+    script_url: https://raw.githubusercontent.com/kunaivn2/cool/main/js/YT.request.js
     body_required: true
     binary_body: true
 - http_response:
     name: youtube.response
     match: ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting)
-    script_url: https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.response.preview.js
+    script_url: https://raw.githubusercontent.com/kunaivn2/cool/main/js/YT.response.js
     body_required: true
     binary_body: true
 - http_response:
@@ -79,12 +79,12 @@ scriptings:
 - http_response:
     name: Kinemaster
     match: https://api-account.kinemasters.com/v2/user/subscribe
-    script_url: https://apptesters.org/wp-content/uploads/KineMaster.js
+    script_url: https://raw.githubusercontent.com/kunaivn2/cool/main/js/Kinemaster.js
     body_required: true
     update_interval: 5
 - http_response:
-    name: Alight Motion
+    name: AlightMotion
     match: https://us-central1-alight-creative.cloudfunctions.net/getAccountStatusAndLicenses
-    script_url: https://apptesters.org/wp-content/uploads/AlightMotion.js
+    script_url: https://raw.githubusercontent.com/kunaivn2/cool/main/js/AlightMotion.js
     body_required: true
     update_interval: 5
