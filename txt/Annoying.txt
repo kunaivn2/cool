@@ -1,0 +1,11 @@
+! Title: Berry (Annoying)
+! Description: Chặn link referral
+! Last modified: 16 Feb 2025 22:30 UTC+7
+! Version: 1
+! Homepage: http://steamcommunity.com/profiles/76561198861414543
+||shp.ee^
+||shope.ee^
+||tiktok.com^
+||lazada.vn^
+||shopee.vn^
+||lzd.co^
