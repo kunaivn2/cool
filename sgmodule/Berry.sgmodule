@@ -14,7 +14,7 @@ ipv6 = false
 [Script]
 Soundcloud = type=http-response, pattern=https://api-mobile.soundcloud.com/configuration/ios, requires-body=1, enable=true, max-size=131072, timeout=10, requires-body=true, script-path=https://raw.githubusercontent.com/kunaivn2/cool/main/js/Soundcloud.js
 Locket = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$), enable=true, script-path=https://raw.githubusercontent.com/kunaivn2/cool/main/js/Locket.js, requires-body=true, max-size=131072, timeout=10
-#LocketDeleteHeader = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers), enable=true, script-path=, timeout=10, requires-body=true, max-size=131072
+LocketReq = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers), enable=true, script-path=https://raw.githubusercontent.com/kunaivn2/cool/main/js/LocketReq.js, timeout=10, requires-body=true, max-size=131072
 Truecaller = type=http-response, pattern=^https://premium-(.+)\.truecaller\.com/v\d/(subscriptions|products\/apple), enable=true, requires-body=1, timeout=10, requires-body=true, max-size=131072, script-path=https://raw.githubusercontent.com/kunaivn2/cool/main/js/TrueCaller.js
 iTunes = type=http-response, pattern=^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt, enable=true, script-path=https://raw.githubusercontent.com/kunaivn2/cool/main/js/iTunes.js, requires-body=true, max-size=131072, timeout=10
 PicsArt = type=http-response, pattern=https://api.picsart.com/gw-v2/shop/subscription/apple/purchases, enable=true, script-path=https://raw.githubusercontent.com/kunaivn2/cool/main/js/PicsArt.js, requires-body=true, max-size=131072, timeout=10
