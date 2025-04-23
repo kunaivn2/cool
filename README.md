@@ -2,9 +2,9 @@
 
 ### Shadowrocket
 ```
-https://raw.githubusercontent.com/tori2105/iOS-App-Scripts/refs/heads/main/config/berry.sgmodule
+https://raw.githubusercontent.com/tori2105/iOS-App-Scripts/refs/heads/main/config/tori.sgmodule
 ```
 ### Egern
 ```
-https://raw.githubusercontent.com/tori2105/iOS-App-Scripts/refs/heads/main/config/berry.yaml
+https://raw.githubusercontent.com/tori2105/iOS-App-Scripts/refs/heads/main/config/tori.yaml
 ```
