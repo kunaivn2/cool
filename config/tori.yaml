@@ -25,59 +25,59 @@ header_rewrites:
 
 map_locals:
 - match: ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad
-  to: https://raw.githubusercontent.com/kunaivn2/iOS-App-Scripts/main/etc/blank.txt
+  to: https://raw.githubusercontent.com/tori2105/iOS-App-Scripts/main/etc/blank.txt
 
 scriptings:
 - http_request:
     name: youtube.request
     match: ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence)
-    script_url: https://raw.githubusercontent.com/kunaivn2/iOS-App-Scripts/main/js/YoutubeReq.js
+    script_url: https://raw.githubusercontent.com/tori2105/iOS-App-Scripts/main/js/YoutubeReq.js
     body_required: true
     binary_body: true
 - http_response:
     name: youtube.response
     match: ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting)
-    script_url: https://raw.githubusercontent.com/kunaivn2/iOS-App-Scripts/main/js/YoutubeRes.js
+    script_url: https://raw.githubusercontent.com/tori2105/iOS-App-Scripts/main/js/YoutubeRes.js
     body_required: true
     binary_body: true
 - http_response:
     name: TrueCaller
     match: ^https://premium-(.+)\.truecaller\.com/v\d/(subscriptions|products\/apple)?
-    script_url: https://raw.githubusercontent.com/kunaivn2/iOS-App-Scripts/main/js/TrueCaller.js
+    script_url: https://raw.githubusercontent.com/tori2105/iOS-App-Scripts/main/js/TrueCaller.js
     body_required: true
 - http_response:
     name: Grammarly
     match: ^https?:\/\/subscription\.grammarly\.com\/api\/v1\/subscription$
-    script_url: https://raw.githubusercontent.com/kunaivn2/iOS-App-Scripts/main/js/Grammarly.js
+    script_url: https://raw.githubusercontent.com/tori2105/iOS-App-Scripts/main/js/Grammarly.js
     body_required: true
     update_interval: 5
 - http_response:
     name: Locket
     match: ^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$)
-    script_url: https://raw.githubusercontent.com/kunaivn2/iOS-App-Scripts/main/js/LocketRes.js
+    script_url: https://raw.githubusercontent.com/tori2105/iOS-App-Scripts/main/js/LocketRes.js
     body_required: true
     update_interval: 5
 - http_request:
     name: Locket
     match: ^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers)
-    script_url: https://raw.githubusercontent.com/kunaivn2/iOS-App-Scripts/main/js/LocketReq.js
+    script_url: https://raw.githubusercontent.com/tori2105/iOS-App-Scripts/main/js/LocketReq.js
     body_required: true
     update_interval: 5
 - http_request:
     name: PicsArt
     match: https://api.picsart.com/gw-v2/shop/subscription/apple/purchases
-    script_url: https://raw.githubusercontent.com/kunaivn2/iOS-App-Scripts/main/js/PicsArt.js
+    script_url: https://raw.githubusercontent.com/tori2105/iOS-App-Scripts/main/js/PicsArt.js
     body_required: true
     update_interval: 5
 - http_response:
     name: AdGuard
     match: ^https:\/\/mobile-api\.adguard\.org\/api\/.+\/ios_validate_receipt\/(.*?)
-    script_url: https://raw.githubusercontent.com/kunaivn2/iOS-App-Scripts/main/js/AdGuard.js
+    script_url: https://raw.githubusercontent.com/tori2105/iOS-App-Scripts/main/js/AdGuard.js
     body_required: true
     update_interval: 5
 - http_response:
     name: AppitTesters
     match: ^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt
-    script_url: https://raw.githubusercontent.com/kunaivn2/iOS-App-Scripts/main/js/iTunes.js
+    script_url: https://raw.githubusercontent.com/tori2105/iOS-App-Scripts/main/js/iTunes.js
     body_required: true
     update_interval: 5
