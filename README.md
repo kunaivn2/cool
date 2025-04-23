@@ -1,4 +1,4 @@
-<p align="center"><img src="https://raw.githubusercontent.com/kunaivn2/iOS-App-Scripts/refs/heads/main/resources/bongo.png"></p>
+<p align="center"><img width="300px" height="auto" src="https://raw.githubusercontent.com/kunaivn2/iOS-App-Scripts/refs/heads/main/resources/bongo.png"></p>
 
 ### Shadowrocket
 ```
