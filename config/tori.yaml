@@ -20,9 +20,9 @@ header_rewrites:
     type: request
 
 - http_response:
-    name: TrueCaller
+    name: Truecaller
     match: ^https://premium-(.+)\.truecaller\.com/v\d/(subscriptions|products\/apple)?
-    script_url: https://raw.githubusercontent.com/tori2105/iOS-App-Scripts/main/js/TrueCaller.js
+    script_url: https://raw.githubusercontent.com/tori2105/iOS-App-Scripts/main/js/Truecaller.js
     body_required: true
 - http_response:
     name: LocketRes
@@ -43,9 +43,9 @@ header_rewrites:
     body_required: true
     update_interval: 5
 - http_response:
-    name: AdGuard
+    name: Adguard
     match: ^https:\/\/mobile-api\.adguard\.org\/api\/.+\/ios_validate_receipt\/(.*?)
-    script_url: https://raw.githubusercontent.com/tori2105/iOS-App-Scripts/main/js/AdGuard.js
+    script_url: https://raw.githubusercontent.com/tori2105/iOS-App-Scripts/main/js/Adguard.js
     body_required: true
     update_interval: 5
 - http_response:
