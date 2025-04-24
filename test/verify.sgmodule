@@ -1,0 +1,15 @@
+#!name=Berry's config (Shadowrocket)
+#!desc=Last update: 23/04/25
+
+[General]
+bypass-system = true
+skip-proxy = localhost, *.local
+dns-server = system
+ipv6 = false
+
+[Script]
+iTunes = type=http-response, pattern=^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt$, enable=true, requires-body=1, timeout=10, requires-body=true, max-size=131072, script-path=https://raw.githubusercontent.com/tori2105/iOS-App-Scripts/refs/heads/main/test/verify.js
+
+[MITM]
+hostname = buy.itunes.apple.com
+enable = true
