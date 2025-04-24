@@ -3,14 +3,10 @@ mitm:
   ca_p12: egern.p12
   ca_passphrase: egern
   hostnames:
-  - '*.googlevideo.com'
-  - youtubei.googleapis.com
   - mobile-api.adguard.org
-  - api.revenuecat.com
-  - subscription.grammarly.com
+  - %APPEND% api.revenuecat.com
   - premium*.truecaller.com
   - api.picsart.com
-  - us-central1-alight-creative.cloudfunctions.net
   - buy.itunes.apple.com
 
 header_rewrites:
@@ -23,42 +19,19 @@ header_rewrites:
     name: x-revenuecat-etag
     type: request
 
-map_locals:
-- match: ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad
-  to: https://raw.githubusercontent.com/tori2105/iOS-App-Scripts/main/etc/blank.txt
-
-scriptings:
-- http_request:
-    name: youtube.request
-    match: ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence)
-    script_url: https://raw.githubusercontent.com/tori2105/iOS-App-Scripts/main/js/YoutubeReq.js
-    body_required: true
-    binary_body: true
-- http_response:
-    name: youtube.response
-    match: ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting)
-    script_url: https://raw.githubusercontent.com/tori2105/iOS-App-Scripts/main/js/YoutubeRes.js
-    body_required: true
-    binary_body: true
 - http_response:
     name: TrueCaller
     match: ^https://premium-(.+)\.truecaller\.com/v\d/(subscriptions|products\/apple)?
     script_url: https://raw.githubusercontent.com/tori2105/iOS-App-Scripts/main/js/TrueCaller.js
     body_required: true
 - http_response:
-    name: Grammarly
-    match: ^https?:\/\/subscription\.grammarly\.com\/api\/v1\/subscription$
-    script_url: https://raw.githubusercontent.com/tori2105/iOS-App-Scripts/main/js/Grammarly.js
-    body_required: true
-    update_interval: 5
-- http_response:
-    name: Locket
+    name: LocketRes
     match: ^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$)
     script_url: https://raw.githubusercontent.com/tori2105/iOS-App-Scripts/main/js/LocketRes.js
     body_required: true
     update_interval: 5
 - http_request:
-    name: Locket
+    name: LocketReq
     match: ^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers)
     script_url: https://raw.githubusercontent.com/tori2105/iOS-App-Scripts/main/js/LocketReq.js
     body_required: true
@@ -76,7 +49,7 @@ scriptings:
     body_required: true
     update_interval: 5
 - http_response:
-    name: AppitTesters
+    name: iTunes
     match: ^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt
     script_url: https://raw.githubusercontent.com/tori2105/iOS-App-Scripts/main/js/iTunes.js
     body_required: true
