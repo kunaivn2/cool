@@ -1,5 +1,5 @@
-#!name=Berry's config (Shadowrocket)
-#!desc=Last update: 23/04/25
+#!name=Test config
+#!desc=No desc
 
 [General]
 bypass-system = true
