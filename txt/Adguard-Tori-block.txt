@@ -16,3 +16,4 @@
 ||garena.com^
 ||shopeemobile.com^
 ||shopee.io^
+||cdngarenanow-a.akamaihd.net^
