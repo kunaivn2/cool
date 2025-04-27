@@ -18,3 +18,4 @@
 ||shopee.io^
 ||cdngarenanow-a.akamaihd.net^
 ||firebaselogging-pa.googleapis.com
+||shopeedeals.sale^
