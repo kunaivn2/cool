@@ -1,0 +1,15 @@
+! Title: Tori's filter (unblock)
+! Description: i see dead people 
+! Last modified: 28 Apr 2025 00:00 UTC+7 
+! Version: 1 
+! Homepage: http://summerdash.likesyou.org
+! Unblock facebook telemetry 
+!
+@@||b-graph-fallback.facebook.com^ 
+@@||b-graph.facebook.com^ 
+@@||graph-fallback.facebook.com^ 
+@@||graph.facebook.com^ 
+@@||graph.fbpigeon.com^ 
+@@||z-m-graph.facebook.com^ 
+@@||web.facebook.com^ 
+@@||web-fallback.facebook.com^ 
