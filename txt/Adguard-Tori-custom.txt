@@ -1,2 +1,20 @@
-! Title: Tori's custom config ! Description: i see dead people ! Last modified: 16 Feb 2025 22:30 UTC+7 ! Version: 1 ! Homepage: http://steamcommunity.com/profiles/76561198861414543 ! Unblock facebook telemetry @@||b-graph-fallback.facebook.com^ @@||b-graph.facebook.com^ @@||graph-fallback.facebook.com^ @@||graph.facebook.com^ @@||graph.fbpigeon.com^ @@||z-m-graph.facebook.com^ @@||web.facebook.com^ @@||web-fallback.facebook.com^ ||shp.ee^ ||shope.ee^ ||tiktok.com^ ||lazada.vn^ ||shopee.vn^ ||lzd.co^ Title: Berry 
-! Description: i see dead people ! Last modified: 16 Feb 2025 22:30 UTC+7 ! Version: 1 ! Homepage: http://steamcommunity.com/profiles/76561198861414543 ! Unblock facebook telemetry @@||b-graph-fallback.facebook.com^ @@||b-graph.facebook.com^ @@||graph-fallback.facebook.com^ @@||graph.facebook.com^ @@||graph.fbpigeon.com^ @@||z-m-graph.facebook.com^ @@||web.facebook.com^ @@||web-fallback.facebook.com^ ||shp.ee^ ||shope.ee^ ||tiktok.com^ ||lazada.vn^ ||shopee.vn^ ||lzd.co^ 
+! Title: Tori's custom config 
+! Description: i see dead people 
+! Last modified: 16 Feb 2025 22:30 UTC+7 
+! Version: 1 
+! Homepage: http://steamcommunity.com/profiles/76561198861414543 
+! Unblock facebook telemetry 
+@@||b-graph-fallback.facebook.com^ 
+@@||b-graph.facebook.com^ 
+@@||graph-fallback.facebook.com^ 
+@@||graph.facebook.com^ 
+@@||graph.fbpigeon.com^ 
+@@||z-m-graph.facebook.com^ 
+@@||web.facebook.com^ 
+@@||web-fallback.facebook.com^ 
+||shp.ee^ 
+||shope.ee^ 
+||tiktok.com^ 
+||lazada.vn^ 
+||shopee.vn^ 
+||lzd.co^
