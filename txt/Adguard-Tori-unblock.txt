@@ -13,3 +13,4 @@
 @@||z-m-graph.facebook.com^ 
 @@||web.facebook.com^ 
 @@||web-fallback.facebook.com^ 
+@@||chat-e2ee.facebook.com^
