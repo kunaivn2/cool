@@ -19,5 +19,5 @@
 ||cdngarenanow-a.akamaihd.net^
 ||firebaselogging-pa.googleapis.com
 ||shopeedeals.sale^
-||crashlyticsreports-pa.googleapis.com^
+||crashlyticsreports-pa.googleapis.com
 ||app-measurement.com^
