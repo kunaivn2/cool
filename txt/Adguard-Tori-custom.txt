@@ -20,3 +20,9 @@
 ||lazada.vn^ 
 ||shopee.vn^ 
 ||lzd.co^
+||shopee.sg^
+||susercontent.com^
+||fastecn.com^
+||garena.com^
+||shopeemobile.com^
+||shopee.io^
