@@ -1,5 +1,5 @@
 #!name=Berry's config (Shadowrocket)
-#!desc=Last update: 23/04/25
+#!desc=Last update: 28/04/25
 
 [General]
 bypass-system = true
@@ -14,7 +14,8 @@ Truecaller = type=http-response, pattern=^https://premium-(.+)\.truecaller\.com/
 iTunes = type=http-response, pattern=^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt, enable=true, script-path=https://raw.githubusercontent.com/tori2105/iOS-App-Scripts/main/js/iTunes.js, requires-body=true, max-size=131072, timeout=10
 PicsArt = type=http-response, pattern=https://api.picsart.com/gw-v2/shop/subscription/apple/purchases, enable=true, script-path=https://raw.githubusercontent.com/tori2105/iOS-App-Scripts/main/js/PicsArt.js, requires-body=true, max-size=131072, timeout=10
 Adguard = type=http-response, pattern=^https:\/\/mobile-api\.adguard\.org\/api\/.+\/ios_validate_receipt\/(.*?), enable=true, script-path=https://raw.githubusercontent.com/tori2105/iOS-App-Scripts/main/js/Adguard.js, requires-body=true, max-size=131072, timeout=10
+Xingtu = type=http-response, pattern=^https:\/\/commerce-api\.faceu\.mobi\/commerce\/v1\/subscription, enable=true, requires-body=1, timeout=10, requires-body=true, max-size=131072, script-path=https://raw.githubusercontent.com/tori2105/iOS-App-Scripts/main/js/Xingtu.js
 
 [MITM]
-hostname = %APPEND% api.revenuecat.com, premium*.truecaller.com, api.picsart.com, buy.itunes.apple.com, mobile-api.adguard.org
+hostname = %APPEND% api.revenuecat.com, premium*.truecaller.com, api.picsart.com, buy.itunes.apple.com, mobile-api.adguard.org, commerce-api.faceu.mobi
 enable = true
